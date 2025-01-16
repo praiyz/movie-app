@@ -11,13 +11,14 @@ const App = () => {
     <div className="bg-[#212121] text-[#e2e2e2] h-full flex flex-col ">
       <Header />
 
-      <div className="flex"></div>
-      <SideBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movie/:id" element={<movieDetails />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="flex">
+        <SideBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<movieDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

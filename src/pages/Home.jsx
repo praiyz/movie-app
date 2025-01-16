@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { fetchAllMovies } from "../services/omdbApi";
 import TrendingMovieCard from "../components/TrendingMovieCard";
+import { trendingMoviesData } from "../data/data";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,18 +16,20 @@ const Home = () => {
 
       setMovies(data.Search);
       setMovies(data);
-      setTrendingMovies(data.Search.slice(0, 3));
-      console.log(trendingMovies);
+     
     };
     fetchData();
+    setTrendingMovies(trendingMoviesData)
   }, []);
   return (
-    <div>
-      <div className="flex gap-3 flex-col">
-        {" "}
-        {trendingMovies?.map((movie) => (
-          <TrendingMovieCard key={movie.imdbID} movie={movie} />
-        ))}
+    <div className="overflow-hidden">
+      <div className="overflow-x-scroll mx-5 w-full">
+        <div className="flex w-fit gap-32">
+          {" "}
+          {trendingMovies?.map((movie) => (
+            <TrendingMovieCard key={movie.title} movie={movie} />
+          ))}
+        </div>
       </div>
     </div>
   );
