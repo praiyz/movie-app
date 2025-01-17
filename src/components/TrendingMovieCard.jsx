@@ -3,10 +3,10 @@ import { IoMdPlay } from "react-icons/io";
 import { IoLogoYoutube } from "react-icons/io5";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-const TrendingMovieCard = ({ movie }) => {
+const TrendingMovieCard = ({ movie, handleScroll }) => {
   console.log(movie);
   return (
-    <div className="w-[65rem] relative text-[#e2e2e2] rounded-xl">
+    <div className="w-[77rem] relative text-[#e2e2e2] rounded-xl">
       {/* Trending button */}
       <button className="absolute top-6 left-5 px-4 py-1 rounded-2xl bg-slate-200/20">
         Now Trending 🔥
@@ -50,11 +50,11 @@ const TrendingMovieCard = ({ movie }) => {
           </div>
         </div>
         <div className="flex items-center gap-3 justify-end *:bg-slate-400/50 *:rounded-3xl *:p-3">
-          <button className="text-4xl">
+          <button onClick={() => handleScroll("left")} className="text-4xl">
             {" "}
             <FaChevronLeft />
           </button>
-          <button className="text-4xl">
+          <button onClick={() => handleScroll("right")} className="text-4xl">
             <FaChevronRight />
           </button>
         </div>
