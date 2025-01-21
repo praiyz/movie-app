@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <header className="bg-gray-900 py-6 px-4 shadow-md">
+    <header className="bg-gray-900 py-6 px-4 shadow-md fixed z-30 w-full">
       <div className="container flex flex-col md:flex-row justify-between items-center mx-auto ">
         <h1 className="text-white text-2xl font-bold mb-4 md:mb-0">
           Praiyz-Movie-App
