@@ -1,60 +1,58 @@
 /* eslint-disable react/prop-types */
-import { IoMdPlay } from "react-icons/io";
-import { IoLogoYoutube } from "react-icons/io5";
-import { FaChevronLeft } from "react-icons/fa";
-import { FaChevronRight } from "react-icons/fa";
+import {
+  FaPlay,
+  FaYoutube,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa6";
+
 const TrendingMovieCard = ({ movie, handleScroll }) => {
-  console.log(movie);
+  console.log(movie)
   return (
-    <div className="w-[77rem] relative text-[#e2e2e2] rounded-xl">
-      {/* Trending button */}
-      <button className="absolute top-6 left-5 px-4 py-1 rounded-2xl bg-slate-200/20">
+    <div className=" relative w-[70rem]  text-[#e2e2e2]  ">
+      <button className=" absolute top-4 left-5 px-4 py-1 rounded-2xl bg-slate-200/20">
         Now Trending 🔥
       </button>
-      {/* Movie poster */}
       <img
-        className="w-full object-cover h-[30rem] rounded-3xl"
-        src={movie.poster}
-        alt={movie.title}
+        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+        className="w-full object-cover rounded-3xl h-[30rem]"
+        alt=""
       />
+
       <div className="absolute bottom-0 w-full p-4 flex items-end justify-between">
         <div>
-          {/* Movie genres */}
           <div className="flex gap-2 items-center">
-            {movie.genres.map((genre, index) => (
+            {/* {movie.genres.map((genre, index) => (
               <span
                 key={index}
-                className="bg-slate-200/20 text-xs px-2 py-1 rounded-2xl"
+                className="text-xs bg-slate-200/20 px-2 py-1 rounded-2xl"
               >
                 {genre}
               </span>
-            ))}
+            ))} */}
           </div>
-          {/* Movie title and plot */}
           <div className="mt-2 flex flex-col items-start gap-3">
-            <h2 className="text-2xl font-bold mt-2">{movie.title}</h2>
-            <p className="text-sm w-[50%]">{movie.plot}</p>
+            <h2 className="text-3xl font-bold mt-2">{movie.title}</h2>
+            <p className="text-sm w-[50%]">{movie.overview}</p>
           </div>
-          {/* Action buttons */}
-          <div className="mt-4 flex gap-4 items-center *:py-1 *:px-3 *:rounded-2xl">
-            {/* the hysteric column is a special feature in tailwind that targets all its components*/}
-            <button className="bg-white text-black flex items-center gap-2 ">
-              {" "}
-              <IoMdPlay />
-              Watch Now
+
+          <div className="mt-4 flex gap-4 items-center *:rounded-2xl *:py-1 *:px-3 ">
+            <button className="bg-white  text-black flex items-center gap-2 ">
+              <FaPlay />
+              Watch
             </button>
-            <button className="bg-gray-500/50 flex items-center gap-2 border border-white">
-              <IoLogoYoutube />
+            <button className="bg-gray-500/20 flex items-center gap-2 border border-white ">
+              <FaYoutube />
               Trailer
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-3 justify-end *:bg-slate-400/50 *:rounded-3xl *:p-3">
-          <button onClick={() => handleScroll("left")} className="text-4xl">
-            {" "}
+
+        <div className="flex  items-center gap-3 *:bg-slate-300/40 *:rounded-full *:p-5  *:justify-between">
+          <button onClick={() => handleScroll("left")}>
             <FaChevronLeft />
           </button>
-          <button onClick={() => handleScroll("right")} className="text-4xl">
+          <button onClick={() => handleScroll("right")}>
             <FaChevronRight />
           </button>
         </div>

@@ -4,7 +4,7 @@ import { FaRocketchat } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="grid bg-green-500 align-center justify-center grid-direction-column grid-cols-3 relative pl-44">
+    <div className="grid bg-green-200 text-black align-center justify-center grid-direction-column grid-cols-3 relative pl-44">
       <div className="">
         <h1>Logo</h1>
         <p>Copyright c Praiyz-movie-app .All Right Reserved</p>

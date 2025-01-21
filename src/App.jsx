@@ -8,7 +8,7 @@ import SideBar from "./components/SideBar.jsx";
 
 const App = () => {
   return (
-    <div className="bg-[#ff0f0f] text-[#e2e2e2] h-full flex flex-col ">
+    <div className="bg-[#caa7a7] text-[#e2e2e2] h-full flex flex-col ">
       <Header />
 
       <div className="flex">
